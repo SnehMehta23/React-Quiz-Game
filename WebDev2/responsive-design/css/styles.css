@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    background-color: #5995DA;
+    height: 80px;
+}
+
+.header {
+    background-color: #B2D6FF;
+}
+
+.content {
+    background-color: #EAEDF0;
+    height: 600px;
+}
+
+.sign-up {
+    background-color: #D6E9FE;
+}
+
+.feature-1 {
+    background-color: #F5CF8E;
+}
+
+.feature-2 {
+    background-color: #F09A9D;
+}
+
+.feature-3 {
+    background-color: #C8C6FA;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    body {
+        background-color: #F09A9D; /* Red */
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    .sign-up,
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+        width: 50%;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+    .page {
+        width: 960px;
+        margin: 0 auto;
+    }
+    .sign-up {
+        height: 200px;
+        order: 1;
+    }
+    .content {
+        order: 2;
+    }
+
+    .feature-1,
+    .feature-2,
+    .feature-3 {
+        width: 33.3%;
+    }
+    .header {
+        height: 400px;
+    }
+}
+
+/* When you resize yor browser, you should see three different background colors: blue when it's greater than 960px wide, yellow when it's between 401px and 960px, and red when it's less than 400px. */
+
+/* Media queries always begin with the @media "at-rule" followed by some kind of conditional statement, and then some curly braces. */
+
+/* https://www.internetingishard.com/html-and-css/responsive-design/media-query-terms-137d06.png */
+
+/* The only screen "media type" means that the contained styles should only be applied to devices with screens (opposed to printed documents, like when you hit Cmd+P in a browser). The min-width and max-width parts are called "media features", and they specify the device dimenstions you're targeting. */
+
+/* It's always a good idea to start with the mobile layout and work your way up to the desktop version. */
