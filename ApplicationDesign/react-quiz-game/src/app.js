@@ -1,6 +1,8 @@
 import ChatMessage from "./demos/chat-message";
 import SpeakButton from "./demos/speak-button";
 import WelcomeMessage from "./demos/welcome-message";
+import AlertButton from "./demos/alert-button";
+import SocialPost from "./demos/social-post";
 
 // Components should be PascalCase
 // A functional component is just a JS function that returns JSX.
@@ -19,7 +21,21 @@ function App() {
       {/* Values for properties can be any JS expression */}
       <SpeakButton message="Hello there!" />
       <SpeakButton message="Speedy speed speed!" rate={3} pitch={2} />
-      {/* TODO */}
+      <AlertButton alertMessage="This is most definitely an alert!" />
+      <AlertButton
+        alertMessage="Does this one work as well!?"
+        buttonText="DO NOT PRESS"
+      />
+
+      <h2>Social Media</h2>
+      <SocialPost
+        content="Hi, this is my first tweet!"
+        userName="FrontendSneh"
+      />
+      <SocialPost
+        content="Wait... I thought this was Facebook"
+        userName="BackendAndy"
+      />
 
       <h2>Chat</h2>
       <ChatMessage
@@ -42,8 +58,6 @@ function App() {
         userName="CallieCats2000"
         date="02/17/21"
       />
-
-      {/* TODO */}
     </main>
   );
 }

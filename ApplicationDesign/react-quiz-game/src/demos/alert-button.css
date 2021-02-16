@@ -1,0 +1,26 @@
+.alert-button {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  font-size: 0.9rem;
+  background: hsl(6, 93%, 71%);
+  color: white;
+  outline: none;
+  border: 3px dashed transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.alert-button:hover {
+  background: hsl(6, 94%, 65%);
+  transform: rotate(1deg);
+}
+
+.alert-button:active {
+  background: hsl(6, 94%, 58%);
+  transform: rotate(2deg);
+}
+
+.alert-button:focus {
+  border: 3px dashed black;
+}
