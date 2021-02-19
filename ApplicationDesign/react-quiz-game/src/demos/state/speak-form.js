@@ -3,6 +3,7 @@ import { useState } from "react";
 function SpeakForm() {
   const [message, setMessage] = useState("");
   const [rate, setRate] = useState(1);
+  const [pitch, setPitch] = useState(1);
 
   // Change event handler. It gets an event for the triggered change
   //   const onMessageChange = (event) => {
@@ -19,10 +20,15 @@ function SpeakForm() {
     setRate(newRate);
   };
 
+  const onPitchChange = (event) => {
+    const newPitch = parseFloat(event.target.value);
+    setPitch(newPitch);
+  };
+
   const speak = () => {
     speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(message);
-    utterance.pitch = 1;
+    utterance.pitch = pitch;
     utterance.rate = rate;
     speechSynthesis.speak(utterance);
   };
@@ -48,6 +54,18 @@ function SpeakForm() {
           step="0.1"
           value={rate}
           onChange={onRateChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="pitch">Pitch:</label>
+        <input
+          id="pitch"
+          type="range"
+          min="0"
+          max="2"
+          step="0.1"
+          value={pitch}
+          onChange={onPitchChange}
         />
       </div>
       <button onClick={speak}>Speak 🔊</button>
