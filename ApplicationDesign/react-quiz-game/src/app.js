@@ -1,8 +1,10 @@
-import ChatMessage from "./demos/chat-message";
-import SpeakButton from "./demos/speak-button";
-import WelcomeMessage from "./demos/welcome-message";
-import AlertButton from "./demos/alert-button";
-import SocialPost from "./demos/social-post";
+import ChatMessage from "./demos/props/chat-message";
+import SpeakButton from "./demos/props/speak-button";
+import WelcomeMessage from "./demos/props/welcome-message";
+import AlertButton from "./demos/props/alert-button";
+import SocialPost from "./demos/props/social-post";
+import ClickButton from "./demos/state/click-button";
+import SpeakForm from "./demos/state/speak-form";
 
 // Components should be PascalCase
 // A functional component is just a JS function that returns JSX.
@@ -10,6 +12,12 @@ function App() {
   return (
     <main>
       <h1>My First React App</h1>
+
+      <h2>Speak Form</h2>
+      <SpeakForm />
+
+      <h2>Stateful Buttons</h2>
+      <ClickButton />
 
       <h2>Welcome</h2>
       {/* name and greeting become properties on an object passed in to WelcomeMessage */}
