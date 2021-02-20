@@ -11,14 +11,14 @@ function MusicalButton({ children }) {
     synth.triggerAttackRelease("F4", "3n", now + 4);
     synth.triggerAttackRelease("E4", "3n", now + 5);
     synth.triggerAttackRelease("C4", "6n", now + 6.5);
-    synth.triggerAttackRelease("C4", "2n", now + 7);
+    synth.triggerAttackRelease("C4", "3n", now + 7);
     synth.triggerAttackRelease("D4", "6n", now + 8);
     synth.triggerAttackRelease("C4", "6n", now + 9);
     synth.triggerAttackRelease("G4", "6n", now + 10);
     synth.triggerAttackRelease("F4", "4n", now + 11);
     synth.triggerAttackRelease("C4", "3n", now + 12);
     synth.triggerAttackRelease("C4", "6n", now + 13);
-    synth.triggerAttackRelease("C5", "2n", now + 14);
+    synth.triggerAttackRelease("C5", "3n", now + 14);
     synth.triggerAttackRelease("A4", "6n", now + 15);
     synth.triggerAttackRelease("F4", "6n", now + 16);
     synth.triggerAttackRelease("E4", "6n", now + 17);
