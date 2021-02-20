@@ -7,7 +7,6 @@ function CustomIncrement() {
   const [resetIncrement] = useState(1);
   const onAddButtonClick = () => {
     setAmount(amount + incrementCount);
-    console.log(amount);
   };
 
   const onResetButtonClick = () => {

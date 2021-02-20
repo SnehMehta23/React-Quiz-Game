@@ -6,6 +6,8 @@ import SocialPost from "./demos/props/social-post";
 import ClickButton from "./demos/state/click-button";
 import SpeakForm from "./demos/state/speak-form";
 import CustomIncrement from "./demos/state/custom-increment";
+import MusicalButton from "./demos/dependencies/musical-button";
+import ConfettiDemo from "./demos/dependencies/confetti-demo";
 
 // Components should be PascalCase
 // A functional component is just a JS function that returns JSX.
@@ -13,6 +15,12 @@ function App() {
   return (
     <main>
       <h1>My First React App</h1>
+
+      <h2>Confetti Demo</h2>
+      <ConfettiDemo />
+
+      <h2>Tone.js Music</h2>
+      <MusicalButton>Click for a surprise! 🎂</MusicalButton>
 
       <h2>Custom Incrementing!</h2>
       <CustomIncrement />
