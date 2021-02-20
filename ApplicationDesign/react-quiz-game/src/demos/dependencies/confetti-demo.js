@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function ConfettiDemo() {
   const [isRunning, setIsRunning] = useState(false);
-  const [numParticles, setNumParticles] = useState(200);
+  const [numParticles, setNumParticles] = useState(100);
 
   const toggleConfetti = () => setIsRunning(!isRunning);
 
