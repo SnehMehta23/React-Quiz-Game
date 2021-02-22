@@ -11,8 +11,8 @@ function ConfettiDemo() {
   const [resetGravity] = useState(0.1);
   const [resetNumParticles] = useState(100);
 
-  const confettiWidth = (window.innerWidth / 2);
-  const confettiHeight = (window.innerHeight / 2);
+  const confettiWidth = window.innerWidth / 2;
+  const confettiHeight = window.innerHeight / 2;
 
   console.log(confettiWidth);
   console.log(confettiHeight);
@@ -90,12 +90,9 @@ function ConfettiDemo() {
         <button onClick={toggleConfetti}>{buttonText}</button>
       </div>
       <div>
-      <button
-        style={buttonStyle}
-        onClick={onResetButtonClick}
-      >
-        Reset
-      </button>
+        <button style={buttonStyle} onClick={onResetButtonClick}>
+          Reset
+        </button>
       </div>
       <Confetti
         numberOfPieces={numParticles}
@@ -103,7 +100,7 @@ function ConfettiDemo() {
         wind={wind}
         run={isRunning}
         colors={["#26a9cc", "#f48760", "#bc7efd"]}
-        confettiSource = {{x: confettiWidth, y: confettiHeight, width: 1, height: 1}}
+        confettiSource={{ x: confettiWidth, y: confettiHeight }}
       />
     </div>
   );
