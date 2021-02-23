@@ -3,15 +3,13 @@ import { useState } from "react";
 function CustomIncrement() {
   const [amount, setAmount] = useState(0);
   const [incrementCount, setIncrementCount] = useState(1);
-  const [resetValue] = useState(0);
-  const [resetIncrement] = useState(1);
   const onAddButtonClick = () => {
     setAmount(amount + incrementCount);
   };
 
   const onResetButtonClick = () => {
-    setIncrementCount(resetIncrement);
-    setAmount(resetValue);
+    setIncrementCount(1);
+    setAmount(0);
   };
 
   const onIncrementChange = (event) => {
@@ -35,11 +33,7 @@ function CustomIncrement() {
         {text}
         {incrementCount}
       </button>
-      <button
-        style={buttonStyle}
-        value={resetIncrement}
-        onClick={onResetButtonClick}
-      >
+      <button style={buttonStyle} onClick={onResetButtonClick}>
         Reset
       </button>
       <br />

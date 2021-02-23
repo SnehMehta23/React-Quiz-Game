@@ -7,9 +7,9 @@ function ConfettiDemo() {
   const [numParticles, setNumParticles] = useState(100);
   const [gravity, setGravity] = useState(0.1);
   const [wind, setWind] = useState(0);
-  const [resetWind] = useState(0);
-  const [resetGravity] = useState(0.1);
-  const [resetNumParticles] = useState(100);
+  // const [resetWind] = useState(0);
+  // const [resetGravity] = useState(0.1);
+  // const [resetNumParticles] = useState(100);
 
   const confettiWidth = window.innerWidth / 2;
   const confettiHeight = window.innerHeight / 2;
@@ -20,9 +20,12 @@ function ConfettiDemo() {
   const toggleConfetti = () => setIsRunning(!isRunning);
 
   const onResetButtonClick = () => {
-    setWind(resetWind);
-    setGravity(resetGravity);
-    setNumParticles(resetNumParticles);
+    setNumParticles(100);
+    setGravity(0.1);
+    setWind(0);
+    // setWind(resetWind);
+    // setGravity(resetGravity);
+    // setNumParticles(resetNumParticles);
   };
 
   const onParticleChange = (event) => {
@@ -94,14 +97,16 @@ function ConfettiDemo() {
           Reset
         </button>
       </div>
-      <Confetti
-        numberOfPieces={numParticles}
-        gravity={gravity}
-        wind={wind}
-        run={isRunning}
-        colors={["#26a9cc", "#f48760", "#bc7efd"]}
-        confettiSource={{ x: confettiWidth, y: confettiHeight }}
-      />
+      {isRunning && (
+        <Confetti
+          numberOfPieces={numParticles}
+          gravity={gravity}
+          wind={wind}
+          run={isRunning}
+          colors={["#26a9cc", "#f48760", "#bc7efd"]}
+          confettiSource={{ x: confettiWidth, y: confettiHeight }}
+        />
+      )}
     </div>
   );
 }
