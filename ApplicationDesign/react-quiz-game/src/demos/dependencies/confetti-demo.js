@@ -7,15 +7,9 @@ function ConfettiDemo() {
   const [numParticles, setNumParticles] = useState(100);
   const [gravity, setGravity] = useState(0.1);
   const [wind, setWind] = useState(0);
-  // const [resetWind] = useState(0);
-  // const [resetGravity] = useState(0.1);
-  // const [resetNumParticles] = useState(100);
 
   const confettiWidth = window.innerWidth / 2;
   const confettiHeight = window.innerHeight / 2;
-
-  console.log(confettiWidth);
-  console.log(confettiHeight);
 
   const toggleConfetti = () => setIsRunning(!isRunning);
 
@@ -23,9 +17,6 @@ function ConfettiDemo() {
     setNumParticles(100);
     setGravity(0.1);
     setWind(0);
-    // setWind(resetWind);
-    // setGravity(resetGravity);
-    // setNumParticles(resetNumParticles);
   };
 
   const onParticleChange = (event) => {

@@ -17,13 +17,20 @@ function DataViz() {
   ];
 
   return (
-    <LineChart width={600} height={300} data={data}>
-      <Line type="monotone" dataKey="temp" stroke="#8884d8" strokeWidth="4px" />
-      <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-      <XAxis dataKey="name" />
-      <YAxis dataKey="temp" />
-      <Tooltip />
-    </LineChart>
+    <div className="chart-container">
+      <LineChart width={600} height={300} data={data}>
+        <Line
+          type="monotone"
+          dataKey="temp"
+          stroke="#8884d8"
+          strokeWidth="4px"
+        />
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+        <XAxis dataKey="name" />
+        <YAxis dataKey="temp" />
+        <Tooltip />
+      </LineChart>
+    </div>
   );
 }
 

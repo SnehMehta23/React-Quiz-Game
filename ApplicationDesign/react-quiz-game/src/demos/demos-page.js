@@ -8,6 +8,7 @@ import SpeakForm from "./state/speak-form";
 import CustomIncrement from "./state/custom-increment";
 import MusicalButton from "./dependencies/musical-button";
 import ConfettiDemo from "./dependencies/confetti-demo";
+import Todos from "./arrays/todos";
 
 function DemosPage() {
   return (
@@ -15,6 +16,9 @@ function DemosPage() {
     // A functional component is just a JS function that returns JSX.
     <main>
       <h1>My First React App</h1>
+
+      <h2>Rendering Arrays</h2>
+      <Todos />
 
       <h2>Confetti Demo</h2>
       <ConfettiDemo />
