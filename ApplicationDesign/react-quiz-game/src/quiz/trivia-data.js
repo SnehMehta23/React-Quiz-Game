@@ -111,6 +111,6 @@ triviaData = triviaData.map((item) => {
   };
 });
 // Just for testing purposes
-// triviaData = triviaData.slice(0, 2);
+triviaData = triviaData.slice(0, 2);
 
 export default triviaData;

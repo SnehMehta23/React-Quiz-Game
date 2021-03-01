@@ -1,10 +1,20 @@
+import { AnimatePresence, motion } from "framer-motion";
 import "./stats.css";
+
+//TODO Animate the score and question number on each click (AnimatePresence?)
 
 function Stat({ label, value }) {
   return (
     <li className="stats__stat-container">
       <div className="stats__stat-label">{label}:</div>
-      <div className="stats__stat-value">{value}</div>
+      <motion.div
+        className="stats__stat-value"
+        initial={{ scale: 0, originX: 0.5, originY: 0.5 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", damping: 10, stiffness: 100 }}
+      >
+        {value}
+      </motion.div>
     </li>
   );
 }

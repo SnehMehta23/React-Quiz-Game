@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import EndScreen from "./end-screen";
 import Stats from "./stats";
 import TriviaItem from "./trivia-item";
 import triviaData from "./trivia-data";
+import { FadeTransition, FadeWrapper } from "./fade-transition";
+
 /**
  * The Game is responsible for orchestrating the flow of the quiz game.
  */
@@ -45,11 +48,14 @@ function Game() {
   };
 
   let pageContent;
+  let pageKey;
   if (isGameOver) {
+    pageKey = "EndScreen";
     pageContent = (
       <EndScreen score={score} bestScore={0} onRetryClick={restartGame} />
     );
   } else {
+    pageKey = triviaIndex;
     const triviaQuestion = triviaData[triviaIndex];
     const { correct_answer, incorrect_answers, question } = triviaQuestion;
     pageContent = (
@@ -75,7 +81,9 @@ function Game() {
         questionNumber={questionNumber}
         totalQuestions={numQuestions}
       />
-      {pageContent}
+      <FadeWrapper>
+        <FadeTransition key={pageKey}>{pageContent}</FadeTransition>
+      </FadeWrapper>
     </>
   );
 }
