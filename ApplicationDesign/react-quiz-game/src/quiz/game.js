@@ -33,7 +33,7 @@ function Game() {
     if (triviaIndex >= triviaData.length - 1) {
       setGameState({ ...gameState, isGameOver: true });
     } else {
-      // Using the spread operator to copy the gameState and override the triviaINdex
+      // Using the spread operator to copy the gameState and override the triviaIndex
       setGameState({ ...gameState, triviaIndex: triviaIndex + 1 });
     }
   };
@@ -57,10 +57,16 @@ function Game() {
   } else {
     pageKey = triviaIndex;
     const triviaQuestion = triviaData[triviaIndex];
-    const { correct_answer, incorrect_answers, question } = triviaQuestion;
+    const {
+      correct_answer,
+      incorrect_answers,
+      question,
+      difficulty,
+    } = triviaQuestion;
     pageContent = (
       <TriviaItem
         key={triviaIndex}
+        difficulty={difficulty}
         question={question}
         correctAnswer={correct_answer}
         incorrectAnswers={incorrect_answers}

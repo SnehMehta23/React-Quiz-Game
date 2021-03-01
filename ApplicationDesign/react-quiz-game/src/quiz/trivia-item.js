@@ -8,6 +8,7 @@ import { useState } from "react";
  * @param {string} props.correctAnswer
  * @param {string[]} props.incorrectAnswers
  * @param {string} props.question
+ * @param {string} props.difficulty
  * @param {() => void} props.onNextClick
  * @param {(boolean) => void} props.onAnswerSelected
  */
@@ -16,6 +17,7 @@ function TriviaItem({
   correctAnswer,
   incorrectAnswers,
   question,
+  difficulty,
   onNextClick,
   onAnswerSelected,
 }) {
@@ -36,9 +38,13 @@ function TriviaItem({
     onAnswerSelected(wasPlayerCorrect);
   };
 
+  const difficultyLevel =
+    difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
   return (
     <div>
-      <p className="trivia-item__question">{question}</p>
+      <p className="trivia-item__question">
+        [{difficultyLevel}]: {question}
+      </p>
       <ul className="trivia-item__answers">
         {shuffledAnswers.map((answer, i) => {
           let className = "trivia-item__button";

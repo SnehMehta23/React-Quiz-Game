@@ -7,84 +7,84 @@ let triviaData = [
     category: "Sports",
     type: "multiple",
     difficulty: "easy",
-    question: "In baseball, how many fouls are an out?",
-    correct_answer: "0",
-    incorrect_answers: ["5", "3", "2"],
+    question: "Which of the following sports is not part of the triathlon?",
+    correct_answer: "Horse-Riding",
+    incorrect_answers: ["Cycling", "Swimming", "Running"],
   },
   {
     category: "Sports",
     type: "multiple",
-    difficulty: "hard",
-    question:
-      "What is the full name of the footballer &quot;Cristiano Ronaldo&quot;?",
-    correct_answer: "Cristiano Ronaldo dos Santos Aveiro",
+    difficulty: "medium",
+    question: "The F1 season of 1994 is remembered for what tragic event?",
+    correct_answer: "Death of Ayrton Senna (San Marino)",
     incorrect_answers: [
-      "Cristiano Ronaldo los Santos Diego",
-      "Cristiano Armando Diego Ronaldo",
-      "Cristiano Luis Armando Ronaldo",
+      "The Showdown (Australia)",
+      "Verstappen on Fire (Germany)",
+      "Schumacher&#039;s Ban (Britain)",
+    ],
+  },
+  {
+    category: "Sports",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "What was the final score of the Germany vs. Brazil 2014 FIFA World Cup match?",
+    correct_answer: "7 - 1",
+    incorrect_answers: ["0 - 1", "3 - 4", "16 - 0"],
+  },
+  {
+    category: "Sports",
+    type: "multiple",
+    difficulty: "medium",
+    question: "Which team was the 2015-2016 NBA Champions?",
+    correct_answer: "Cleveland Cavaliers",
+    incorrect_answers: [
+      "Golden State Warriors",
+      "Toronto Raptors",
+      "Oklahoma City Thunders",
     ],
   },
   {
     category: "Sports",
     type: "multiple",
     difficulty: "hard",
-    question: "Which year was the third Super Bowl held?",
-    correct_answer: "1969",
-    incorrect_answers: ["1968", "1971", "1970"],
-  },
-  {
-    category: "Sports",
-    type: "multiple",
-    difficulty: "easy",
-    question:
-      "What is the most common type of pitch thrown by pitchers in baseball?",
-    correct_answer: "Fastball",
-    incorrect_answers: ["Slowball", "Screwball", "Palmball"],
+    question: "Where was the Games of the XXII Olympiad held?",
+    correct_answer: "Moscow",
+    incorrect_answers: ["Barcelona", "Tokyo", "Los Angeles"],
   },
   {
     category: "Sports",
     type: "multiple",
     difficulty: "medium",
     question:
-      "Which professional wrestler fell from the rafters to his death during a live Pay-Per-View event in 1999?",
-    correct_answer: "Owen Hart",
-    incorrect_answers: ["Chris Benoit", "Lex Luger", "Al Snow"],
-  },
-  {
-    category: "Sports",
-    type: "multiple",
-    difficulty: "easy",
-    question: "Who won the 2017 Formula One World Drivers&#039; Championship?",
-    correct_answer: "Lewis Hamilton",
-    incorrect_answers: ["Sebastian Vettel", "Nico Rosberg", "Max Verstappen"],
+      "Which of the following Grand Slam tennis tournaments occurs LAST?",
+    correct_answer: "US Open",
+    incorrect_answers: ["French Open", "Wimbledon", "Australian Open"],
   },
   {
     category: "Sports",
     type: "multiple",
     difficulty: "medium",
-    question: "What is Tiger Woods&#039; all-time best career golf-score?",
-    correct_answer: "61",
-    incorrect_answers: ["65", "63", "67"],
+    question: "Who won the &quot;Champions League&quot; in 1999?",
+    correct_answer: "Manchester United",
+    incorrect_answers: ["Barcelona", "Bayern Munich", "Liverpool"],
   },
   {
     category: "Sports",
     type: "multiple",
     difficulty: "easy",
-    question: "Which two teams played in Super Bowl XLII?",
-    correct_answer: "The New York Giants &amp; The New England Patriots",
-    incorrect_answers: [
-      "The Green Bay Packers &amp; The Pittsburgh Steelers",
-      "The Philadelphia Eagles &amp; The New England Patriots",
-      "The Seattle Seahawks &amp; The Denver Broncos",
-    ],
+    question:
+      "Which African American is in part responsible for integrating  Major League baseball?",
+    correct_answer: "Jackie Robinson",
+    incorrect_answers: ["Curt Flood", "Roy Campanella", "Satchell Paige"],
   },
   {
     category: "Sports",
     type: "multiple",
-    difficulty: "medium",
-    question: "What country hosted the 2014 Winter Olympics?",
-    correct_answer: "Russia",
-    incorrect_answers: ["Canada", "United States", "Germany"],
+    difficulty: "easy",
+    question: "Who did Steven Gerrard win the Champions League with?",
+    correct_answer: "Liverpool",
+    incorrect_answers: ["Real Madrid", "Chelsea", "Man City"],
   },
   {
     category: "Sports",
@@ -111,6 +111,6 @@ triviaData = triviaData.map((item) => {
   };
 });
 // Just for testing purposes
-triviaData = triviaData.slice(0, 2);
+// triviaData = triviaData.slice(0, 2);
 
 export default triviaData;

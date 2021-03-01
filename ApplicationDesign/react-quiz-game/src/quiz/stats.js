@@ -33,6 +33,7 @@ function Stats({ score, questionNumber, totalQuestions }) {
     <ul className="stats">
       <Stat label="Score" value={score} />
       <Stat label="Question" value={`${questionNumber} / ${totalQuestions}`} />
+      {/* TODO: Add in the diffculty here in a <Stat> */}
     </ul>
   );
 }

@@ -3,5 +3,5 @@
   include it using a script tag in our HTML.
 */
 
-// import "./quiz-game/prompt-game-version.js";
-import "./quiz-game/game.js";
+import "./quiz-game/prompt-game-version.js";
+// import "./quiz-game/game.js";
