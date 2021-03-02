@@ -16,6 +16,7 @@ import { useState } from "react";
 function TriviaItem({
   correctAnswer,
   incorrectAnswers,
+  difficulty,
   question,
   onNextClick,
   onAnswerSelected,
@@ -37,8 +38,8 @@ function TriviaItem({
     onAnswerSelected(wasPlayerCorrect);
   };
 
-  // const difficultyLevel =
-  //   difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+  const difficultyLevel =
+    difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
   return (
     <div>
       <p className="trivia-item__question">{question}</p>

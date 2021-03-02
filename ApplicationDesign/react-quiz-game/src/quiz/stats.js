@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import "./stats.css";
 
 //TODO Animate the score and question number on each click (AnimatePresence?)
+//TODO Move the animation from this into a scaling transition js file
 
 function Stat({ label, value }) {
   return (
@@ -25,6 +26,7 @@ function Stat({ label, value }) {
  * @param {number} props.score
  * @param {number} props.questionNumber
  * @param {number} props.totalQuestions
+ * @param {string} props.difficulty
  */
 
 // props are one of the main ways we can communicate across our code
@@ -34,7 +36,6 @@ function Stats({ score, questionNumber, totalQuestions, difficulty }) {
       <Stat label="Score" value={score} />
       <Stat label="Question" value={`${questionNumber} / ${totalQuestions}`} />
       <Stat label="Difficulty" value={difficulty} />
-      {/* TODO: Add in the diffculty here in a <Stat> */}
     </ul>
   );
 }

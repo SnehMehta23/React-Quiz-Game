@@ -5,6 +5,9 @@ import Stats from "./stats";
 import TriviaItem from "./trivia-item";
 import triviaData from "./trivia-data";
 import { FadeTransition, FadeWrapper } from "./fade-transition";
+import useSound from "use-sound";
+import correctSfx from "./../sounds/game-sound-correct.wav";
+import incorrectSfx from "./../sounds/game-sound-wrong.wav";
 
 /**
  * The Game is responsible for orchestrating the flow of the quiz game.
@@ -38,14 +41,20 @@ function Game() {
     }
   };
 
+  const [correct] = useSound(correctSfx);
+  const [incorrect] = useSound(incorrectSfx);
+
   const onAnswerSelected = (wasPlayerCorrect) => {
     if (wasPlayerCorrect) {
-      if (difficulty === "easy") {
+      const questionDifficulty =
+        difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+      correct();
+      if (questionDifficulty === "Easy") {
         setGameState({
           ...gameState,
           score: score + 1,
         });
-      } else if (difficulty === "medium") {
+      } else if (questionDifficulty === "Medium") {
         setGameState({
           ...gameState,
           score: score + 2,
@@ -56,6 +65,8 @@ function Game() {
           score: score + 3,
         });
       }
+    } else {
+      incorrect();
     }
   };
   const triviaQuestion = triviaData[triviaIndex];
@@ -98,7 +109,7 @@ function Game() {
         score={score}
         questionNumber={questionNumber}
         totalQuestions={numQuestions}
-        difficulty={difficulty}
+        difficulty={difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
       />
       <FadeWrapper>
         <FadeTransition key={pageKey}>{pageContent}</FadeTransition>
