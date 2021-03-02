@@ -17,7 +17,6 @@ function TriviaItem({
   correctAnswer,
   incorrectAnswers,
   question,
-  difficulty,
   onNextClick,
   onAnswerSelected,
 }) {
@@ -38,13 +37,11 @@ function TriviaItem({
     onAnswerSelected(wasPlayerCorrect);
   };
 
-  const difficultyLevel =
-    difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
+  // const difficultyLevel =
+  //   difficulty.charAt(0).toUpperCase() + difficulty.slice(1);
   return (
     <div>
-      <p className="trivia-item__question">
-        [{difficultyLevel}]: {question}
-      </p>
+      <p className="trivia-item__question">{question}</p>
       <ul className="trivia-item__answers">
         {shuffledAnswers.map((answer, i) => {
           let className = "trivia-item__button";

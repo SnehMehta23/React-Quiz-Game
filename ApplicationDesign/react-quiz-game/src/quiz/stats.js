@@ -28,11 +28,12 @@ function Stat({ label, value }) {
  */
 
 // props are one of the main ways we can communicate across our code
-function Stats({ score, questionNumber, totalQuestions }) {
+function Stats({ score, questionNumber, totalQuestions, difficulty }) {
   return (
     <ul className="stats">
       <Stat label="Score" value={score} />
       <Stat label="Question" value={`${questionNumber} / ${totalQuestions}`} />
+      <Stat label="Difficulty" value={difficulty} />
       {/* TODO: Add in the diffculty here in a <Stat> */}
     </ul>
   );

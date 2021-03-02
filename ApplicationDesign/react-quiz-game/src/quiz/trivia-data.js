@@ -104,6 +104,7 @@ triviaData = triviaData.map((item) => {
   return {
     ...item,
     question: he.decode(item.question),
+    difficulty: he.decode(item.difficulty),
     correct_answer: he.decode(item.correct_answer),
     incorrect_answers: item.incorrect_answers.map((incorrect) =>
       he.decode(incorrect)

@@ -40,12 +40,31 @@ function Game() {
 
   const onAnswerSelected = (wasPlayerCorrect) => {
     if (wasPlayerCorrect) {
-      setGameState({
-        ...gameState,
-        score: score + 1,
-      });
+      if (difficulty === "easy") {
+        setGameState({
+          ...gameState,
+          score: score + 1,
+        });
+      } else if (difficulty === "medium") {
+        setGameState({
+          ...gameState,
+          score: score + 2,
+        });
+      } else {
+        setGameState({
+          ...gameState,
+          score: score + 3,
+        });
+      }
     }
   };
+  const triviaQuestion = triviaData[triviaIndex];
+  const {
+    correct_answer,
+    incorrect_answers,
+    question,
+    difficulty,
+  } = triviaQuestion;
 
   let pageContent;
   let pageKey;
@@ -56,13 +75,6 @@ function Game() {
     );
   } else {
     pageKey = triviaIndex;
-    const triviaQuestion = triviaData[triviaIndex];
-    const {
-      correct_answer,
-      incorrect_answers,
-      question,
-      difficulty,
-    } = triviaQuestion;
     pageContent = (
       <TriviaItem
         key={triviaIndex}
@@ -86,6 +98,7 @@ function Game() {
         score={score}
         questionNumber={questionNumber}
         totalQuestions={numQuestions}
+        difficulty={difficulty}
       />
       <FadeWrapper>
         <FadeTransition key={pageKey}>{pageContent}</FadeTransition>
