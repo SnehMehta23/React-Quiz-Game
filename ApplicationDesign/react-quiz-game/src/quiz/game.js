@@ -41,8 +41,8 @@ function Game() {
     }
   };
 
-  const [correct] = useSound(correctSfx);
-  const [incorrect] = useSound(incorrectSfx);
+  const [correct] = useSound(correctSfx, { volume: 0.25 });
+  const [incorrect] = useSound(incorrectSfx, { volume: 0.25 });
 
   const onAnswerSelected = (wasPlayerCorrect) => {
     if (wasPlayerCorrect) {
