@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import EndScreen from "./end-screen";
 import Stats from "./stats";
 import TriviaItem from "./trivia-item";
-import triviaData from "./trivia-data";
 import { FadeTransition, FadeWrapper } from "./fade-transition";
 import useSound from "use-sound";
 import correctSfx from "./../sounds/game-sound-correct.wav";
@@ -12,7 +11,7 @@ import incorrectSfx from "./../sounds/game-sound-wrong.wav";
 /**
  * The Game is responsible for orchestrating the flow of the quiz game.
  */
-function Game() {
+function Game({ triviaData }) {
   // Could store as seperate useStates but there will be time where we want to reset all three pieces of state, and can be more efficient to set it up as properties of a shared object
   const [gameState, setGameState] = useState({
     score: 0,
