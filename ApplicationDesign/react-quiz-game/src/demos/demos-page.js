@@ -19,7 +19,7 @@ function DemosPage() {
   const [dogFetch, setDogFetch] = useState({
     isLoading: true,
     errorMessage: "",
-    data: null,
+    data: "",
   });
   const { isLoading, errorMessage, data } = dogFetch;
 
@@ -38,12 +38,12 @@ function DemosPage() {
 
         const json = await response.json();
         console.log(json);
-        const { status, message } = json;
-        // if (response_code === 1) {
-        //   throw new Error("Bad API request - no results!");
-        // } else if (response_code === 2) {
-        //   throw new Error("Bad API request - invalid parameter");
-        // }
+        const { response_code, message } = json;
+        if (response_code === 1) {
+          throw new Error("Bad API request - no results!");
+        } else if (response_code === 2) {
+          throw new Error("Bad API request - invalid parameter");
+        }
         // Successfully passed all the error checks!
         setDogFetch({
           isLoading: false,
@@ -63,15 +63,14 @@ function DemosPage() {
       }
     }
     getDogs();
-
     //TODO: we should clean up if the user leaves the page before fetch finishes running.
   }, []);
 
-  let contents;
-  if (isLoading) contents = <LoadingSpinner />;
-  else if (errorMessage !== "")
-    contents = <ErrorMessage>{errorMessage}</ErrorMessage>;
-  else contents = <RandomDogs />;
+  // let contents = "";
+  // if (isLoading) contents = <LoadingSpinner />;
+  // else if (errorMessage !== "")
+  //   contents = <ErrorMessage>{errorMessage}</ErrorMessage>;
+  // else contents = <RandomDogs />;
 
   return (
     // Components should be PascalCase
@@ -80,7 +79,7 @@ function DemosPage() {
       <h1>My First React App</h1>
 
       <h2>Random Dogs Demo</h2>
-      {contents}
+      <RandomDogs data={data} />
 
       <h2>Animation Demo</h2>
       <FramerMotionDemos />
