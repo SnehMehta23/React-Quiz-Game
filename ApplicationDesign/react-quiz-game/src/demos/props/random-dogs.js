@@ -1,11 +1,13 @@
 import React from "react";
 import "./random-dogs.css";
+import LoadingSpinner from "../../common/loading-spinner";
+import ErrorMessage from "../../common/error-message";
 
 function RandomDogs({ data }) {
   const dataDogs = data;
   let contents;
   if (dataDogs == "") {
-    contents = "Hello, nothing to render";
+    contents = <LoadingSpinner />;
   } else if (dataDogs !== "") {
     contents = dataDogs.map((arr) => {
       //MIKE don't look at the horrendous css, or lack of css for images.

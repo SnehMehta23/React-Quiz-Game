@@ -12,8 +12,6 @@ import ConfettiDemo from "./dependencies/confetti-demo";
 import Todos from "./arrays/todos";
 import FramerMotionDemos from "./animation/framer-motion-demos";
 import RandomDogs from "./props/random-dogs";
-import LoadingSpinner from "./../common/loading-spinner";
-import ErrorMessage from "./../common/error-message";
 
 function DemosPage() {
   const [dogFetch, setDogFetch] = useState({
@@ -21,7 +19,7 @@ function DemosPage() {
     errorMessage: "",
     data: "",
   });
-  const { isLoading, errorMessage, data } = dogFetch;
+  const {data } = dogFetch;
 
   useEffect(() => {
     async function getDogs() {
@@ -30,20 +28,15 @@ function DemosPage() {
         const url = "https://dog.ceo/api/breeds/image/random/5";
         const response = await fetch(url);
 
-        if (!response.ok) {
-          throw new Error(
-            `Something went wrong, server responded with ${response.status}.`
-          );
-        }
+        // if (!response.ok) {
+        //   throw new Error(
+        //     `Something went wrong, server responded with ${response.status}.`
+        //   );
+        // }
 
         const json = await response.json();
         console.log(json);
-        const { response_code, message } = json;
-        if (response_code === 1) {
-          throw new Error("Bad API request - no results!");
-        } else if (response_code === 2) {
-          throw new Error("Bad API request - invalid parameter");
-        }
+        const { message } = json;
         // Successfully passed all the error checks!
         setDogFetch({
           isLoading: false,
