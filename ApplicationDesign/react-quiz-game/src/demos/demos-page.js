@@ -19,7 +19,7 @@ function DemosPage() {
     errorMessage: "",
     data: "",
   });
-  const {data } = dogFetch;
+  const { data } = dogFetch;
 
   useEffect(() => {
     async function getDogs() {
