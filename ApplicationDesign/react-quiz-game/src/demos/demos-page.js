@@ -12,58 +12,10 @@ import ConfettiDemo from "./dependencies/confetti-demo";
 import Todos from "./arrays/todos";
 import FramerMotionDemos from "./animation/framer-motion-demos";
 import RandomDogs from "./props/random-dogs";
+import useGetRandomDogs from "../quiz/hooks/use-get-random-dogs";
 
 function DemosPage() {
-  const [dogFetch, setDogFetch] = useState({
-    isLoading: true,
-    errorMessage: "",
-    data: "",
-  });
-  const { data } = dogFetch;
-
-  useEffect(() => {
-    async function getDogs() {
-      try {
-        console.log("Fetching!");
-        const url = "https://dog.ceo/api/breeds/image/random/5";
-        const response = await fetch(url);
-
-        // if (!response.ok) {
-        //   throw new Error(
-        //     `Something went wrong, server responded with ${response.status}.`
-        //   );
-        // }
-
-        const json = await response.json();
-        console.log(json);
-        const { message } = json;
-        // Successfully passed all the error checks!
-        setDogFetch({
-          isLoading: false,
-          errorMessage: "",
-          data: message,
-        });
-      } catch (err) {
-        // Display a generic error message.
-        setDogFetch({
-          isLoading: false,
-          errorMessage:
-            "Something went wrong loading the dogs. Please try again later.",
-          data: null,
-        });
-        // Display specific error for debugging in the console.
-        console.log(err);
-      }
-    }
-    getDogs();
-    //TODO: we should clean up if the user leaves the page before fetch finishes running.
-  }, []);
-
-  // let contents = "";
-  // if (isLoading) contents = <LoadingSpinner />;
-  // else if (errorMessage !== "")
-  //   contents = <ErrorMessage>{errorMessage}</ErrorMessage>;
-  // else contents = <RandomDogs />;
+  const [isLoading, errorMessage, data] = useGetRandomDogs();
 
   return (
     // Components should be PascalCase

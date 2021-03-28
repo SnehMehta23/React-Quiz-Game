@@ -5,7 +5,7 @@ import useGetTriviaData from "./hooks/use-get-trivia-data";
 
 function QuizPage() {
   // Array destructuring to create local variables with our own names.
-  const [isLoading, error, triviaData] = useGetTriviaData(5, "hard");
+  const [isLoading, error, triviaData] = useGetTriviaData(5, "");
 
   let contents;
   if (isLoading) contents = <LoadingSpinner />;
