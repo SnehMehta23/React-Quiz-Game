@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useGetRandomDogs() {
+function useGetRandomDogs(amount) {
   const [dogFetch, setDogFetch] = useState({
     isLoading: true,
     errorMessage: "",
@@ -12,7 +12,7 @@ function useGetRandomDogs() {
     async function getDogs() {
       try {
         console.log("Fetching!");
-        const url = "https://dog.ceo/api/breeds/image/random/5";
+        const url = `https://dog.ceo/api/breeds/image/random/${amount}`;
         const response = await fetch(url);
 
         const json = await response.json();
@@ -38,10 +38,10 @@ function useGetRandomDogs() {
     }
     getDogs();
     //TODO: we should clean up if the user leaves the page before fetch finishes running.
-  }, []);
+  }, [amount]);
 
   const { isLoading, errorMessage, data } = dogFetch;
-  return [isLoading, errorMessage, data];
+  return [isLoading, errorMessage, data, amount];
 }
 
 export default useGetRandomDogs;
