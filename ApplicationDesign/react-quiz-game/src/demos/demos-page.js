@@ -15,8 +15,6 @@ import RandomDogs from "./props/random-dogs";
 import useGetRandomDogs from "../quiz/hooks/use-get-random-dogs";
 
 function DemosPage() {
-  const [isLoading, errorMessage, dogData] = useGetRandomDogs(5);
-
   return (
     // Components should be PascalCase
     // A functional component is just a JS function that returns JSX.
@@ -24,7 +22,7 @@ function DemosPage() {
       <h1>My First React App</h1>
 
       <h2>Random Dogs Demo</h2>
-      <RandomDogs data={dogData} />
+      <RandomDogs />
 
       <h2>Animation Demo</h2>
       <FramerMotionDemos />

@@ -6,7 +6,6 @@ function useGetRandomDogs(amount) {
     errorMessage: "",
     data: "",
   });
-  //   const { data } = dogFetch;
 
   useEffect(() => {
     async function getDogs() {
